@@ -18,4 +18,8 @@ class Product < ApplicationRecord
 	validates :price, numericality: true
 	validates :quantity, numericality: { only_integer: true }
 	validates :quantity, :price, numericality: { greater_or_equal_to: 0}
+
+	#associatons
+
+	belongs_to :category
 end
