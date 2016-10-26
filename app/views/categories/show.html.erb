@@ -1,2 +1,19 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<div class="div container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h1 class="text-center">Category Information</h1>
+      <p><strong>Name:</strong> <%= @category.name %></p>
+      <p><strong>Descripción:</strong> <%= @category.description %></p>
+      <p><strong>Created At:</strong> <%= @category.created_at %></p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row text-center">
+    <div class="col-md-12">
+      <%= link_to 'New category', new_category_path  %> -
+      <%= link_to 'All Products', categories_path  %>
+    </div>
+  </div>
+</div>

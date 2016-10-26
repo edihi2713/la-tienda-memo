@@ -22,6 +22,7 @@ gem 'annotate'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 
+gem 'hirb'
 
 
 # Use jquery as the JavaScript library

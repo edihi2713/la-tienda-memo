@@ -19,6 +19,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -48,7 +49,7 @@ class ProductsController < ApplicationController
   private
   #Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :reference, :price, :quantity, :brand, :description)
+      params.require(:product).permit(:name, :reference, :price, :quantity, :brand, :description, :category_id)
     end
 
     def find_product
