@@ -21,7 +21,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'annotate'
 gem 'bootstrap-sass', '~> 3.3.6'
 
-
+# install devise gem
+gem 'devise'
 gem 'hirb'
 
 

@@ -1,5 +1,8 @@
 class CategoriesController < ApplicationController
   
+  #No permite hacer los métodos
+  before_action :authenticate_user!
+
   before_action :find_category, only: [:edit, :show, :update, :destroy]
 
   def new

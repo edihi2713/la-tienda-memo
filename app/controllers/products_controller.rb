@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+  before_action :authenticate_user!
   before_action :find_product, only: [:edit, :show, :update, :destroy]
 
   
@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-       flash[:notice] = 'Product was sucessfully updated'
+       flash[:alert] = 'Product was sucessfully updated'
        redirect_to product_path(id: @product.id , it_was: 'updated')
     else
       render :edit
@@ -36,7 +36,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product.destroy
+    @product.destroy
     flash[:notice] = 'Product was sucessfully destroyed'
     redirect_to products_path
 
