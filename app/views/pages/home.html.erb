@@ -1,2 +1,32 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container" id="productcontainer">
+	<div class="row">
+		<div class="col-md-3">
+			<h3 class="text-center">Categorías</h3>
+			<ul class="listgroup">
+				<% @categories.each do |category| %>
+					<li class="list-group-item"><%= link_to category.name, root_path(category_id: category.id) %></li>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="col-md-9">
+			<% if @products.size > 0 %>
+				<% @products.each do |product| %>
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="http://fakeimg.pl/350x200/ff0000/000" alt="...">
+						<div class="caption">
+							<h3><%= product.name %></h3>
+							<p class="description"><%= product.description %></p>
+							<p><%= link_to 'Comprar','#', class: 'btn btn-primary' %></p>
+						</div>
+					</div>
+				</div>
+				<% end %>
+
+			 <% else %>
+				<h2 class="text-center">Esta Categoría no tiene productos relacionados</h2>
+			 <% end %>
+		</div>
+	</div>
+</div>

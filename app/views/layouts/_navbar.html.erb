@@ -14,9 +14,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
+          <% if user_signed_in? && current_user.admin? %>
             <li><%= link_to 'Productos',products_path %></li>
             <li><%= link_to 'Categorías',categories_path %></li>
           </ul>
+          <% end %>
           <form class="navbar-form navbar-left">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search">
@@ -31,7 +33,10 @@
                 <li><%= link_to 'Cerrar Sesión',destroy_user_session_path,method: :delete %></li>
               </ul>
             </li>
-             <% end %>
+            <% else %>
+                <li><%= link_to 'Iniciar Sesión',new_user_session_path %></li>
+                <li><%= link_to 'Registrarse',new_user_registration_path %></li>
+            <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
