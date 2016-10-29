@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    flash[:notice] = 'Product was sucessfully destroyed'
+    flash[:flash] = 'Product was sucessfully destroyed'
     redirect_to products_path
 
   end
@@ -50,7 +50,7 @@ class ProductsController < ApplicationController
   private
   #Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :reference, :price, :quantity, :brand, :description, :category_id)
+      params.require(:product).permit(:name, :reference, :price, :quantity, :brand, :description, :category_id, :image)
     end
 
     def find_product

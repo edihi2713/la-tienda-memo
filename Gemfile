@@ -1,6 +1,4 @@
 source 'https://rubygems.org'
-
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 gem 'wdm', '>= 0.1.0'
@@ -20,6 +18,10 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'annotate'
 gem 'bootstrap-sass', '~> 3.3.6'
+
+#instala paperclip
+gem "paperclip", "~> 5.0.0"
+
 
 # install devise gem
 gem 'devise'
