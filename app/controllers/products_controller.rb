@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+  class ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_product, only: [:edit, :show, :update, :destroy]
   before_action :its_admin?
@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-
+    
   end
 
   def update
