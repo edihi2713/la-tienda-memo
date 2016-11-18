@@ -13,7 +13,10 @@ class PurchasesController < ApplicationController
 
 
 		if product.available? && purchase.save
-		   product.update_stock
+			balance = Purchase.balance(current_user)
+			PurchaseNotifierMailer.notify_account_balance(current_user,balance).deliver_now if balance > 10_000
+
+		   	product.update_stock
 			flash[:notice] = 'Tu compra se hizo exitosamente'
 		else
 			flash[:alert] = 'La compra no se pudo completar, intente más tarde'
